@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Rental PS Sultan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulir Rental PS Sultan</h1>
+        
+        <form action="success.html" method="GET"> 
+            <div class="form-group">
+                <label class="required">Nama Lengkap</label>
+                <input type="text" name="name" required pattern="[A-Za-z\s]{1,}" title="Minimal 1 huruf, hanya huruf dan spasi">
+            </div>
+
+            <div class="form-group">
+                <label class="required">Email</label>
+                <input type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Masukkan email valid (contoh: nama@gmail.com)">
+            </div>
+
+            <div class="form-group">
+                <label class="required">Nomor Telepon</label>
+                <input type="tel" required pattern="[\+]\d{2}[\d]{10,13}" title="Format: +62xxx (10-13 digit)" placeholder="+62xxx">
+            </div>
+
+            <div class="form-group">
+                <label class="required">Tanggal Peminjaman</label>
+                <input type="date" required min="2024-01-01">
+            </div>
+
+            <div class="form-group">
+                <label class="required">Durasi Peminjaman (Jam)</label>
+                <input type="number" required min="1" placeholder="Minimal 1 jam">
+            </div>
+
+            <div class="form-group">
+                <label class="required">Jenis PS</label>
+                <select required>
+                    <option value="">Pilih PS</option>
+                    <option value="ps7">PlayStation 7</option>
+                    <option value="ps7-digital">PlayStation 7 Digital Edition</option>
+                    <option value="ps7-pro">PlayStation 7 Pro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="required">Jumlah Stick</label>
+                <input type="number" required min="1" placeholder="Minimal 1 stick">
+            </div>
+
+            <div class="form-group">
+                <label>Game yang Ingin Dimainkan</label>
+                <textarea rows="3" placeholder="Sebutkan game yang ingin anda mainkan..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="required">Alamat Pengiriman</label>
+                <textarea required rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="required">Metode Pembayaran</label>
+                <select required name="payment" onchange="
+                    if(this.value=='bank') {
+                        document.getElementById('bank-select').style.display='block';
+                        document.getElementById('ewallet-select').style.display='none';
+                    } 
+                    else if(this.value=='ewallet') {
+                        document.getElementById('bank-select').style.display='none';
+                        document.getElementById('ewallet-select').style.display='block';
+                    }
+                    else {
+                        document.getElementById('bank-select').style.display='none';
+                        document.getElementById('ewallet-select').style.display='none';
+                    }">
+                    <option value="">Pilih Metode Pembayaran</option>
+                    <option value="bank">Transfer Bank</option>
+                    <option value="ewallet">E-Wallet</option>
+                    <option value="cash">Tunai</option>
+                </select>
+            </div>
+            
+            <div class="form-group" id="bank-select">
+                <label class="required">Pilih Bank</label>
+                <select required>
+                    <option value="">Pilih Bank</option>
+                    <option value="bri">BRI - 547001042746535</option>
+                    <option value="bni">BNI - 1792866785</option>
+                    <option value="bca">BCA - 3120881123</option>
+                    <option value="mandiri">Mandiri - 1110022981738</option>
+                </select>
+            </div>
+                        
+            <div class="form-group" id="ewallet-select">
+                <label class="required">Pilih E-Wallet</label>
+                <select required>
+                    <option value="">Pilih E-Wallet</option>
+                    <option value="shopeepay">ShopeePay - 081270632690</option>
+                    <option value="dana">DANA - 081270632690</option>
+                    <option value="gopay">GoPay - 081270632690</option>
+                </select>
+            </div>
+
+            <button type="submit">Kirim Pesanan</button>
+        </form>
+
+        <div class="nav-links">
+            <a href="welcome.html">Kembali</a>
+            <a href="anggota.html">Lihat Tim Kami</a>
+        </div>
+    </div>
+</body>
+</html>

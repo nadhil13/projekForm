@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Successful</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #596AFB);
+            background-size: 300% 300%;
+            animation: gradientBG 15s ease infinite;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.1),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            max-width: 90%;
+            width: 500px;
+            animation: fadeInUp 1s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            animation: shine 8s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            20%, 100% { transform: translateX(100%); }
+        }
+
+        .success-icon {
+            font-size: 6rem;
+            background: linear-gradient(45deg, #00f260, #0575e6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: floatIcon 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.05); }
+        }
+
+        .success-icon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            background: radial-gradient(ellipse at center, rgba(0, 242, 96, 0.3) 0%, transparent 70%);
+            bottom: -10px;
+            left: 0;
+            filter: blur(4px);
+            animation: shadowPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes shadowPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            transform: scaleX(0);
+            animation: underline 1.5s ease-out forwards;
+        }
+
+        @keyframes underline {
+            to { transform: scaleX(1); }
+        }
+
+        p {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-weight: 300;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInText 0.8s ease-out forwards;
+        }
+
+        p:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        p:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeInText {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+
+        .button:hover::before {
+            transform: translateX(100%);
+        }
+
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: floatCircle 10s infinite ease-in-out;
+        }
+
+        .circle-1 {
+            width: 100px;
+            height: 100px;
+            top: -50px;
+            left: -50px;
+            animation-delay: 0s;
+        }
+
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            bottom: -75px;
+            right: -75px;
+            animation-delay: -5s;
+        }
+
+        @keyframes floatCircle {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(10px, 10px) rotate(90deg); }
+            50% { transform: translate(0, 20px) rotate(180deg); }
+            75% { transform: translate(-10px, 10px) rotate(270deg); }
+        }
+
+        .sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: white;
+            opacity: 0;
+            animation: sparkle 4s infinite;
+        }
+
+        .sparkle:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: 30%; left: 80%; animation-delay: 1s; }
+        .sparkle:nth-child(3) { top: 70%; left: 30%; animation-delay: 2s; }
+        .sparkle:nth-child(4) { top: 80%; left: 70%; animation-delay: 3s; }
+        .sparkle:nth-child(5) { top: 40%; left: 50%; animation-delay: 0.5s; }
+        .sparkle:nth-child(6) { top: 60%; left: 40%; animation-delay: 1.5s; }
+
+        @keyframes sparkle {
+            0%, 100% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="decorative-circle circle-1"></div>
+        <div class="decorative-circle circle-2"></div>
+        <div class="sparkles">
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+        </div>
+        <i class="fas fa-check-circle success-icon"></i>
+        <h1>Data Berhasil Dikirim!</h1>
+        <p>Terima kasih telah mengirimkan data Anda.</p>
+        <p>Data Anda telah kami terima dan akan segera diproses.</p>
+        <p>Hormat Kami, PS Sultan!</p>
+        <a href="welcome.html" class="button">Kembali ke Beranda</a>
+    </div>
+</body>
+</html>

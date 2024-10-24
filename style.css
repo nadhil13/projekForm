@@ -1,0 +1,506 @@
+/* --- CSS Pertama --- */
+/* Existing CSS remains the same, adding new styles below */ 
+
+/* Welcome Page Styles */ 
+.welcome-page { 
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+   
+} 
+
+.welcome-page body {
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes gradientBG { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+} 
+
+/* Memastikan halaman bisa di-scroll */
+body {
+    background: linear-gradient(135deg, #0047AB, #4169E1);
+    animation: changeBackground 12s infinite;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hero-container { 
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+} 
+
+.hero-content { 
+    width: 90%;
+    max-width: 1200px;
+    text-align: center; 
+    color: white; 
+    margin: auto; /* Ini akan membantu konten tetap di tengah */
+    padding: 2rem; 
+    position: relative;  
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    border-radius: 20px; 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    box-sizing: border-box; /* Menyertakan padding dalam ukuran */
+} 
+
+/* Tambahan untuk margin dan padding di tombol "Rental Sekarang" dan "Tim Kami" */
+.cta-buttons {
+    margin-top: 20px;    /* Jarak antara tombol dan elemen di atasnya */
+    margin-bottom: 40px; /* Jarak antara tombol dan bagian bawah halaman */
+}
+
+.cta-button {
+    padding: 15px 30px;  /* Menambah padding di dalam tombol */
+    margin: 0 10px;      /* Menambah margin antar tombol */
+}
+
+/* Menambah margin bawah pada container utama */
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Styles lainnya tetap sama... */
+
+/* Styles lainnya tetap sama, berikut adalah bagian tambahan untuk textarea */
+
+/* Mengatur ukuran tetap untuk textarea */
+textarea {
+    width: 100%;         /* Sesuaikan lebar dengan container */
+    max-width: 100%;     /* Batasi lebar maksimal */
+    height: 150px;       /* Tinggi tetap 150px */
+    max-height: 200px;   /* Batasi tinggi maksimal */
+    box-sizing: border-box; /* Pastikan padding dan border termasuk dalam ukuran */
+    padding: 10px;       /* Tambahkan padding untuk kenyamanan */
+    font-size: 16px;     /* Atur ukuran font */
+    border-radius: 8px;  /* Tambahkan sudut melengkung */
+    resize: none;        /* Hilangkan opsi ubah ukuran oleh pengguna */
+    border: 2px solid #4169E1; /* Warna border yang sama */
+}
+
+/* Memastikan textarea fokus memiliki tampilan yang sesuai */
+textarea:focus {
+    outline: none;
+    border-color: #0047AB; /* Warna border saat fokus */
+    box-shadow: 0 0 10px rgba(65, 105, 225, 0.3); /* Efek bayangan saat fokus */
+    transform: scale(1.01); /* Efek skala sedikit saat fokus */
+}
+
+/* Style yang ada sebelumnya tetap sama... */
+
+.welcome-title { 
+    font-size: 4em; 
+    margin-bottom: 0.5em; 
+    background: linear-gradient(45deg, #fff, #7dd3fc); 
+    background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1); 
+} 
+
+.tagline { 
+    font-size: 1.8em; 
+    margin-bottom: 1.5em; 
+    color: #7dd3fc; 
+    font-weight: 300; 
+} 
+
+.hero-description { 
+    margin-bottom: 2em; 
+} 
+
+.hero-description p { 
+    font-size: 1.2em; 
+    margin-bottom: 2em; 
+    color: #e2e8f0; 
+} 
+
+.features { 
+    display: flex; 
+    justify-content: center; 
+    gap: 2em; 
+    margin: 2em 0; 
+} 
+
+.feature-item { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.5em; 
+} 
+
+.feature-item i { 
+    font-size: 2em; 
+    color: #7dd3fc; 
+} 
+
+.cta-buttons { 
+    display: flex; 
+    gap: 1em; 
+    justify-content: center; 
+} 
+
+.cta-button { 
+    padding: 1em 2em; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: all 0.3s ease; 
+    border: 2px solid transparent; 
+} 
+
+.cta-button.primary { 
+    background: linear-gradient(45deg, #7dd3fc, #0ea5e9); 
+    color: white; 
+} 
+
+.cta-button.secondary { 
+    background: transparent; 
+    border: 2px solid #7dd3fc; 
+    color: #7dd3fc; 
+} 
+
+.cta-button:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+} 
+
+.decoration-circles .circle { 
+    position: absolute; 
+    border-radius: 50%; 
+    animation: float 6s infinite ease-in-out; 
+} 
+
+.circle-1 { 
+    width: 300px; 
+    height: 300px; 
+    background: linear-gradient(45deg, #7dd3fc20, #0ea5e920); 
+    top: -150px; 
+    right: -150px; 
+} 
+
+.circle-2 { 
+    width: 200px; 
+    height: 200px; 
+    background: linear-gradient(45deg, #7dd3fc15, #0ea5e915); 
+    bottom: -100px; 
+    left: -100px; 
+} 
+
+.circle-3 { 
+    width: 150px; 
+    height: 150px; 
+    background: linear-gradient(45deg, #7dd3fc10, #0ea5e910); 
+    top: 50%; 
+    left: 50%; 
+} 
+
+@keyframes float { 
+    0%, 100% { transform: translateY(0); } 
+    50% { transform: translateY(-20px); } 
+} 
+
+/* Updated Team Member Styles */ 
+.social-links { 
+    display: flex; 
+    justify-content: center; 
+    gap: 1em; 
+    margin-top: 1em; 
+} 
+
+.social-links a { 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    text-decoration: none; 
+    transition: all 0.3s ease; 
+    font-size: 1.2em; 
+} 
+
+.social-links .instagram { 
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+} 
+
+.social-links .whatsapp { 
+    background: #25D366; 
+} 
+
+.social-links .github { 
+    background: #333; 
+} 
+
+.social-links a:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+} 
+
+/* Responsive Adjustments */ 
+@media (max-width: 768px) { 
+    .welcome-title { 
+        font-size: 2.5em; 
+    } 
+     
+    .tagline { 
+        font-size: 1.4em; 
+    } 
+     
+    .features { 
+        flex-direction: column; 
+        gap: 1em; 
+    } 
+     
+    .cta-buttons { 
+        flex-direction: column; 
+    } 
+     
+    .social-links { 
+        flex-wrap: wrap; 
+    } 
+} 
+
+
+/* --- CSS Kedua --- */
+
+/* Global Reset */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+} 
+
+/* Background Animation */
+@keyframes changeBackground { 
+    0% { background: #0047AB; } 
+    14% { background: #4169E1; } 
+    28% { background: #8A2BE2; } 
+    42% { background: #FF6347; } 
+    57% { background: #3CB371; } 
+    71% { background: #FFD700; } 
+    85% { background: #FF69B4; } 
+    100% { background: #0047AB; } 
+} 
+
+body { 
+    background: linear-gradient(135deg, #0047AB, #4169E1); 
+    animation: changeBackground 12s infinite; 
+    min-height: 100vh; 
+    padding: 20px; 
+} 
+
+.container { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 30px; 
+    background: rgba(255, 255, 255, 0.95); 
+    border-radius: 20px; 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(10px); 
+    animation: fadeIn 1s ease; 
+} 
+
+h1 { 
+    text-align: center; 
+    color: #0047AB; 
+    margin-bottom: 30px; 
+    font-size: 2.5em; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+} 
+
+/* Form Styles */
+.form-group { 
+    margin-bottom: 20px;
+    width: 100%; 
+} 
+
+label { 
+    display: block; 
+    margin-bottom: 8px; 
+    color: #0047AB; 
+    font-weight: bold; 
+} 
+
+input, select, textarea { 
+    width: 100%; 
+    padding: 12px; 
+    border: 2px solid #4169E1; 
+    border-radius: 8px; 
+    font-size: 16px; 
+    transition: all 0.3s ease; 
+    box-sizing: border-box;
+} 
+
+input:focus, select:focus, textarea:focus { 
+    outline: none; 
+    border-color: #0047AB; 
+    box-shadow: 0 0 10px rgba(65, 105, 225, 0.3); 
+    transform: scale(1.01); 
+} 
+
+button { 
+    background: linear-gradient(45deg, #0047AB, #4169E1); 
+    color: white; 
+    padding: 15px 30px; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    width: 100%; 
+    font-size: 18px; 
+    margin-top: 20px; 
+    transition: all 0.3s ease; 
+} 
+
+button:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+} 
+
+button:active { 
+    transform: translateY(1px); 
+} 
+
+/* Navigation Links */
+.nav-links { 
+    display: flex;
+    gap: 20px; /* Menambah jarak antar tombol */
+    justify-content: center;
+    text-align: center; 
+    margin-top: 30px; 
+    margin-bottom: 30px;
+} 
+
+.nav-links a { 
+    color: #0047AB; 
+    text-decoration: none; 
+    margin: 0 10px; 
+    font-weight: bold; 
+    transition: all 0.3s ease; 
+} 
+
+.nav-links a:hover { 
+    color: #4169E1; 
+    text-decoration: underline; 
+} 
+
+@keyframes fadeIn { 
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    } 
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+
+.required::after { 
+    content: " *"; 
+    color: red; 
+} 
+
+input:invalid { 
+    border-color: #ff6b6b; 
+} 
+
+/* Team Member Grid */
+.team-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    margin-bottom: 30px; 
+    margin-top: 40px;
+} 
+
+.team-member { 
+    background: white; 
+    border-radius: 15px; 
+    padding: 20px; 
+    text-align: center; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+} 
+
+.team-member:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+} 
+
+.profile-image { 
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%; 
+    margin: 0 auto 20px; 
+    overflow: hidden; 
+    border: 5px solid #0047AB; 
+    transition: all 0.3s ease; 
+} 
+
+.profile-image img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: all 0.3s ease; 
+} 
+
+.team-member:hover .profile-image { 
+    transform: scale(1.05); 
+    border-color: #4169E1; 
+} 
+
+.team-member h2 { 
+    color: #0047AB; 
+    margin-bottom: 10px; 
+    font-size: 1.5em; 
+} 
+
+.team-member p { 
+    color: #666; 
+    margin-bottom: 15px; 
+} 
+
+.nav-links a { 
+    display: inline-block; 
+    background: linear-gradient(45deg, #0047AB, #4169E1); 
+    color: white; 
+    padding: 12px 25px; 
+    text-decoration: none; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    transition: all 0.3s ease; 
+} 
+
+.nav-links a:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+} 
+
+/* Hide all payment select options by default */
+#bank-select,
+#ewallet-select {
+    display: none;
+}
